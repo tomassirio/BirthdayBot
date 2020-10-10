@@ -1,0 +1,12 @@
+# Project entries
+src/config/.env
+build/config/.env
+
+build
+node_modules
+
+# Database entries
+data
+
+# IDE entries
+.idea
