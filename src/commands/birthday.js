@@ -1,6 +1,8 @@
 const Util = require('../utils/utils.js')
-const Item = require('../models/Member.js')
-const ChannelRepository = require('../repositories/server-repository')
+const Member = require('../models/Member.js')
+const ServerRepository = require('../repositories/server-repository')
+const { db } = require('../models/Member.js')
+const Server = require('../models/Server.js')
 
 module.exports = {
     name: 'birthday',
@@ -20,14 +22,24 @@ module.exports = {
         let dateString = args[1] + " " + args[0] + " " + args[2]
         let date = new Date(dateString)
 
-        // const newItem = new Item({
-        //     content: item,
-        //     author: message.author.tag,
-        // })
+        const dbServer = await ServerRepository.findOrCreate(message.guild)
 
-        // const dbChannel = await ChannelRepository.findOrCreate(channel)
-        // dbChannel.items.push(newItem)
-        // dbChannel.save()
+        const newBirthday = new Member({
+            user: message.author.tag,
+            birthday: date
+        })
+        let dbMember = dbServer.members.filter(member => member.user = message.author.tag)
+
+        if(dbMember){
+            dbServer.update({'members.user': message.author.tag}, {'$set': {
+                'members.$.user': message.author.tag,
+                'members.$.birthday': date
+            }})
+        }else{
+            dbServer.members.push(newBirthday)
+        }
+
+        dbServer.save()
 
         let embededMessage = Util.embedMessage(
             "Your birthday was set to " + date,

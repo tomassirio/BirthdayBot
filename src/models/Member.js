@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose')
 const memberSchema = Schema({
     birthday: {
         default: '',
-        type: String,
+        type: Date,
     },
     user: {
         default: '',
