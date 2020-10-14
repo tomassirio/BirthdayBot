@@ -25,17 +25,18 @@ module.exports = {
 
         const dbServer = await ServerRepository.findOrCreate(message.guild)
 
-        const newBirthday = new Member({
-            user: message.author.tag,
-            birthday: date
-        })
         let member = dbServer.members.find(m => m.user === message.author.tag)
 
         if(member){
-            dbServer.members.pull(member)      
+            Server.findOneAndUpdate({$and:[{'_id' : dbServer._id}, {'members.user' : member.user}]}, { $set: { 'members.$.birthday': date } }, { new: true });
+        }else{
+            const newBirthday = new Member({
+                user: message.author.tag,
+                birthday: date
+            })
+            dbServer.members.push(newBirthday)
         }
 
-        dbServer.members.push(newBirthday)
 
         let embededMessage = Util.embedMessage(
             "Your birthday was set to " + date,

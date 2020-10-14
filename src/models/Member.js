@@ -11,4 +11,4 @@ const memberSchema = Schema({
     },
 })
 
-module.exports = model('Member', memberSchema, 'memberTest')
+module.exports = model('Member', memberSchema, 'members')
