@@ -3,6 +3,7 @@ const Member = require('../models/Member.js')
 const ServerRepository = require('../repositories/server-repository')
 const { db } = require('../models/Member.js')
 const Server = require('../models/Server.js')
+const MemberRepository = require('../repositories/member-repository.js')
 
 module.exports = {
     name: 'birthday',
@@ -28,18 +29,13 @@ module.exports = {
             user: message.author.tag,
             birthday: date
         })
-        let dbMember = dbServer.members.filter(member => member.user = message.author.tag)
+        let member = dbServer.members.find(m => m.user === message.author.tag)
 
-        if(dbMember){
-            dbServer.update({'members.user': message.author.tag}, {'$set': {
-                'members.$.user': message.author.tag,
-                'members.$.birthday': date
-            }})
-        }else{
-            dbServer.members.push(newBirthday)
+        if(member){
+            dbServer.members.pull(member)      
         }
 
-        dbServer.save()
+        dbServer.members.push(newBirthday)
 
         let embededMessage = Util.embedMessage(
             "Your birthday was set to " + date,
