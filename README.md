@@ -2,6 +2,16 @@
 
 <h1 align="center">BIRTHDAYBOT</h1>
 
+<p align="center">
+  <a href="https://github.com/tomassirio/BirthdayBot/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/tomassirio/BirthdayBot"></a>
+  <a href="https://github.com/tomassirio/BirthdayBot/issues"><img src="https://img.shields.io/github/issues/tomassirio/BirthdayBot"></a>
+  <a href="https://github.com/tomassirio/BirthdayBot/network/members"><img src="https://img.shields.io/github/forks/tomassirio/BirthdayBot"></a>
+  <a href="https://img.shields.io/github/stars/tomassirio/BirthdayBot"><img src="https://img.shields.io/github/stars/tomassirio/BirthdayBot"></a>
+  <a href="https://img.shields.io/github/license/tomassirio/BirthdayBot"><img src="https://img.shields.io/github/license/tomassirio/BirthdayBot"></a>
+  <a href="https://img.shields.io/badge/Hacktoberfest-red"><img src="https://img.shields.io/badge/Hacktoberfest-red"></a>
+</p>
+
+
 
 ## :bust_in_silhouette: Who Am I?
 
