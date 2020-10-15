@@ -49,6 +49,17 @@ Learn how to create a Discord bot and get a valid token [here](https://github.co
 
 ### :jack_o_lantern: Contributors Hacktoberfest 2020:
 
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/tomassirio">
+            <img src="https://avatars3.githubusercontent.com/u/19593836?v=4" width="100;" alt="tomassirio"/>
+            <br />
+            <sub><b>Tomas Sirio</b></sub>
+        </a>
+    </td>
+</tr>
+</table>
 <!-- readme: contributors -end -->
 
 [Add yours!](./CONTRIBUTING.md)
