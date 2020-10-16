@@ -4,12 +4,13 @@ module.exports = async (client, message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return
 
     let args = message.content
-        .slice(process.env.PREFIX.length)
+        .slice(prefix.length)
         .trim()
         .split(/ +/)
     const command = args.shift().toLowerCase()
-
+    
     if (!client.commands.has(command)) return
+    
 
     try {
         client.commands.get(command).execute(message, args)

@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 const { stripIndents } = require('common-tags')
-
+const { prefix } = require('../config')
 module.exports = {
     name: 'commands',
     aliases: ['c'],
@@ -22,7 +22,7 @@ function getAll(client, message) {
     const commands = (category) => {
         return client.commands
             .filter((cmd) => cmd.category === category)
-            .map((cmd) => `- \`${process.env.PREFIX + cmd.name}\``)
+            .map((cmd) => `- \`${prefix + cmd.name}\``)
             .join('\n')
     }
 
@@ -38,7 +38,7 @@ function getAll(client, message) {
     return message.channel.send(
         embed.setDescription(
             'Use `' +
-                `${process.env.PREFIX}help <commandName>\` without the \`<>\` to see more information about a specific command.\n\n${info}`
+                `${prefix}help <commandName>\` without the \`<>\` to see more information about a specific command.\n\n${info}`
         )
     )
 }
