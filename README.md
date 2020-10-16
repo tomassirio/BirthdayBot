@@ -71,10 +71,10 @@ Learn how to create a Discord bot and get a valid token [here](https://github.co
   <a href="mailto:tomassirio@gmail.com?Subject=Tomas%20You%20Are%20Amazing!">
       <img src="https://cdn2.downdetector.com/static/uploads/logo/image21.png" width="100"; height="100"/>
   </a>
-  <a href="linkedin.com/in/tomassirio">
+  <a href="https://www.linkedin.com/in/tomassirio/">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6lpesO6pwpEcg_vPih50fcYPqy4F0Y_xw5Q&usqp=CAU" width="100"; height="100"/>
   </a>
-  <a href="https://discord.gg/59YjSZ">
+  <a href="https://discord.gg/H67z6e">
       <img src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-discord.png?w=585&scale=down" width="100"; height="100"/>
   </a>
   <a href="https://www.buymeacoffee.com/tomassirio1">

@@ -1,19 +1,17 @@
-const Util = require('../utils/utils.js')
-const Member = require('../models/Member.js')
-const ServerRepository = require('../repositories/server-repository')
-const { db } = require('../models/Member.js')
-const Server = require('../models/Server.js')
-const MemberRepository = require('../repositories/member-repository.js')
+const Util = require("../utils/utils.js");
+const Member = require("../models/Member.js");
+const ServerRepository = require("../repositories/server-repository");
+const Server = require("../models/Server.js");
 
 module.exports = {
-    name: 'birthday',
-    description: 'Adds/Edits the user`s birthday',
-    execute: async (message, args) => {
-        let item = ''
-        for (let i = 0; i < args.length; i++) {
-            item += args[i] + ' '
-        }
-        let channel = message.channel
+  name: "birthday",
+  description: "Adds/Edits the user`s birthday",
+  execute: async (message, args) => {
+    let item = "";
+    for (let i = 0; i < args.length; i++) {
+      item += args[i] + " ";
+    }
+    let channel = message.channel;
 
         if (args === undefined || args.length != 3) {
             var embeded = Util.embedMessage("Error",
