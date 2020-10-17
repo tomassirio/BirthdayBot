@@ -15,7 +15,6 @@ client.categories = fs.readdirSync(path.resolve(__dirname, './commands/'))
 })
 
 const files = fs.readdirSync(path.join(__dirname, '/events')) // Read the content files in the directory before starting the bot.
-
 files.forEach((fileName) => {
     if (fileName.endsWith('.js')) {
         // Looking for .js files only.
@@ -24,6 +23,12 @@ files.forEach((fileName) => {
 
         console.log(`Successfully loaded the ${eventName} event.`)
         client.on(eventName, event.bind(null, client))
+
+        client.on('ready', () => {
+            if (eventName === 'schedule') {
+                event(client) // trigger schedule event
+            }
+        })
     }
 })
 
