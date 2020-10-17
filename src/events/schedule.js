@@ -1,16 +1,6 @@
 var cron = require('node-cron');
 const ServerRepository = require("../repositories/server-repository.js");
 
-/* 
-First the bot needs to get a list of all the servers it is attached to
-Then the bot needs to check and see if a channel that is called #birthdayBot exists on each server
-if that channel doesnt exist the bot needs to create it before it starts saying happy birthday to people
-
-After the channel is created or already exists
-i need to loop through the list of people in the server and check to see if their given birthday matches todays date
-if it does then the bot should wish them a happy birthday by sending out a message in the appropriate channel
-*/
-
 module.exports = async (client) => {
     await client.mongoose.init()
     cron.schedule('0 9 * * *', () => {
