@@ -7,11 +7,11 @@ module.exports = {
   name: "birthday",
   description: "Adds/Edits the user`s birthday",
   execute: async (message, args) => {
-    let item = "";
-    for (let i = 0; i < args.length; i++) {
-      item += args[i] + " ";
-    }
-    let channel = message.channel;
+        let item = "";
+        for (let i = 0; i < args.length; i++) {
+        item += args[i] + " ";
+        }
+        let channel = message.channel;
 
         if (args === undefined || args.length != 3) {
             var embeded = Util.embedMessage("Error",
@@ -31,15 +31,13 @@ module.exports = {
             dbServer.members[memberIndex].discord_id = message.author.id     
             dbServer.markModified('members')     
             await dbServer.save()
-           
-        }else{
+        } else {
             const newBirthday = new Member({
                 user: message.author.tag,
                 birthday: date,
                 discord_id: message.author.id
             })
             dbServer.members.push(newBirthday)
-            await dbServer.save()
         }
 
         let embededMessage = Util.embedMessage(
