@@ -1,6 +1,17 @@
 const { prefix } = require('../config')
 
 module.exports = async (client, message) => {
+
+    let flag = false;
+
+    message.guild.channels.cache.map((channel) => {
+        if(channel.name == "wishes")
+            flag = true;     
+    });
+
+    if(!flag)
+        message.guild.channels.create("wishes", "text/voice");
+    
     if (!message.content.startsWith(prefix) || message.author.bot) return
 
     let args = message.content
