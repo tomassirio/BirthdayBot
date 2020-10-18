@@ -58,6 +58,41 @@ Learn how to create a Discord bot and get a valid token [here](https://github.co
             <sub><b>Tomas Sirio</b></sub>
         </a>
     </td>
+      <td align="center">
+        <a href="https://github.com/Tails128">
+            <img src="https://avatars1.githubusercontent.com/u/12231147?v=4" width="100;" alt="Tails128"/>
+            <br />
+            <sub><b>Tails128</b></sub>
+        </a>
+    </td>
+      <td align="center">
+        <a href="https://github.com/MicahJank">
+            <img src="https://avatars0.githubusercontent.com/u/40408940?v=4" width="100;" alt="MicahJank"/>
+            <br />
+            <sub><b>Micah Janke</b></sub>
+        </a>
+    </td>
+      <td align="center">
+        <a href="https://github.com/FabianBG">
+            <img src="https://avatars2.githubusercontent.com/u/5873743?v=4" width="100;" alt="FabianBG"/>
+            <br />
+            <sub><b>Milton Fabian Bastidas Guerra</b></sub>
+        </a>
+    </td>
+      <td align="center">
+        <a href="https://github.com/KRHero03">
+            <img src="https://avatars3.githubusercontent.com/u/44499991?v=4" width="100;" alt="KRHero03"/>
+            <br />
+            <sub><b>Krunal Rank</b></sub>
+        </a>
+    </td>
+      <td align="center">
+        <a href="https://github.com/b2pacific">
+            <img src="https://avatars0.githubusercontent.com/u/52305879?v=4" width="100;" alt="b2pacific"/>
+            <br />
+            <sub><b>Prashant Pandey</b></sub>
+        </a>
+    </td>
 </tr>
 </table>
 <!-- readme: contributors -end -->
