@@ -24,13 +24,19 @@ module.exports = {
         const dbServer = await ServerRepository.findOrCreate(message.guild)
         
         let member = dbServer.members.find(m => m.user === message.author.tag)
-        console.log(member)
         if(member){
             let memberIndex = dbServer.members.findIndex(m => m.user === message.author.tag)
             dbServer.members[memberIndex].birthday = date
             dbServer.members[memberIndex].discord_id = message.author.id     
             dbServer.markModified('members')     
             await dbServer.save()
+            let embededMessage = Util.embedMessage(
+                'Birthday Set',
+                message.author.tag,
+                '0xffff00',
+                "Your birthday is modified to " + date
+            )
+            channel.send(embededMessage)
         } else {
             const newBirthday = new Member({
                 user: message.author.tag,
@@ -38,15 +44,18 @@ module.exports = {
                 discord_id: message.author.id
             })
             dbServer.members.push(newBirthday)
+            dbServer.markModified('members')     
+            await dbServer.save()
+            let embededMessage = Util.embedMessage(
+                'Birthday Set',
+                message.author.tag,
+                '0xffff00',
+                "Your birthday is set to " + date
+            )
+            channel.send(embededMessage)
         }
 
-        let embededMessage = Util.embedMessage(
-            'Birthday Set',
-            message.author.tag,
-            '0xffff00',
-            "Your birthday was set to " + date
-        )
-        channel.send(embededMessage)
+        
         
     },
 }

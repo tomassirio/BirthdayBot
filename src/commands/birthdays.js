@@ -8,25 +8,27 @@ module.exports = {
   execute: async (message, args) => {
     let channel = message.channel;
 
-    if (args.length !== 0) {
-      var embeded = Util.embedMessage(
-        "Error",
-        "0x232529",
-        "Birthdays has no arguments"
-      );
-      channel.send(embeded);
-      return;
-    }
-
     const dbServer = await ServerRepository.findOrCreate(message.guild);
 
     let birthdays = dbServer.members
       .filter((member) => member.birthday != undefined)
-      .sort((a, b) => yearless(b.birthday) - yearless(a.birthday))
+      .sort((a, b) => yearless(a.birthday) - yearless(b.birthday))
       .reduce(formatUsers, "");
 
+    if (!birthdays) {
+      let embededMessage = Util.embedMessage(
+        `No Birthdays Found`,
+        message.author.tag,
+        "0xffff00",
+        `Users in this server have not set their Birthdays yet!`
+      );
+
+      channel.send(embededMessage);
+      return;
+    }
+
     let embededMessage = Util.embedMessage(
-      `here's the list of the registered birthdays:`,
+      `List of All Registered Birthdays`,
       message.author.tag,
       "0xffff00",
       birthdays
