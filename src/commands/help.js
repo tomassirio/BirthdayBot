@@ -15,7 +15,8 @@ module.exports = {
             process.env.PREFIX + 'birthday <dd mm yyyy>: adds your birthday to the server\n\n' +
             process.env.PREFIX + 'birthdays: brings all the birthdays in the server\n\n' +
             process.env.PREFIX + 'nextBirthday: gets the next server\'s birthday\n\n' +
-            process.env.PREFIX + 'whatsMyBirthday: gets your birthday\n'
+            process.env.PREFIX + 'whatsMyBirthday: gets your birthday\n\n'+
+            process.env.PREFIX + 'help: shows all commands and their description\n'
         );
         channel.send(embededMessage)
     },
